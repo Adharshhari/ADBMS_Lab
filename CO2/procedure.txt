@@ -1,0 +1,15 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `addstatus`(id INT,uname VARCHAR(30),noVaccine INT)
+BEGIN
+IF(noVaccine=0)
+THEN
+INSERT INTO cov_status VALUES(id,uname,"NOT VACCINATED");
+END IF;
+IF(noVaccine=1)
+THEN
+INSERT INTO cov_status VALUES(id,uname,"PARTIALLY VACCINATED");
+END IF;
+IF(noVaccine=2)
+THEN
+INSERT INTO cov_status VALUES(id,uname,"FULLY VACCINATED");
+END IF;
+END

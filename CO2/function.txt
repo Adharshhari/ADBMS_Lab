@@ -1,0 +1,11 @@
+CREATE DEFINER=`root`@`localhost` FUNCTION `travel`(noVaccine INT) RETURNS varchar(30) CHARSET utf8 COLLATE utf8_bin
+BEGIN
+if(noVaccine=2)
+    then
+return ("International Travel allowed");
+end if;
+    if(noVaccine<2)
+    then
+return ("International Travel not allowed");
+end if;
+END
